@@ -10,15 +10,65 @@
     <div class="container">
       <header><h1>Will Trade Help?</h1></header>
       <div class="row">
+        <h2 class="col-sm-12">Summary Table</h2>
+        <button id="sampleBtn" class="btn btn-default">Sample Data</button>
+        <button id="clearData" class="btn btn-default">Clear Data</button>
+        <div class="sampleCase">
+          <table class="table table-bordered sampleTable col-sm-12">
+            <tr class="tableGoodsOpCost">
+              <td></td>
+              <td id="goodX"></td>
+              <td id="goodXopCost"><strong>Opportunity Cost</strong> (what must be given up to produce one unit of the first good)</td>
+              <td id="goodY"></td>
+              <td id="goodYopCost"><strong>Opportunity Cost</strong> (what must be given up to produce one unit of the second good)</td>
+            </tr>
+            <tr class="tablePerson1">
+              <td id="person1"></td>
+              <td id="goodXperson1"></td>
+              <td id="goodXperson1opCost"></td>
+              <td id="goodYperson1"></td>
+              <td id="goodYperson1opCost"></td>
+            </tr>
+            <tr class="tablePerson2">
+              <td id="person2"></td>
+              <td id="goodXperson2"></td>
+              <td id="goodXperson2opCost"></td>
+              <td id="goodYperson2"></td>
+              <td id="goodYperson2opCost"></td>
+            </tr>
+          </table>
+          <table class="table table-bordered sampleTableTotals col-sm-12">
+            <tr>
+              <td></td>
+              <td>Total before trade (autarky)</td>
+              <td>Total after trade and specialization (if equivalent production ratios complete specialization may not be best solution)</td>
+            </tr>
+            <tr>
+              <td id="goodXname"></td>
+              <td id="totalXbefore"></td>
+              <td id="totalXafter"></td>
+            </tr>
+            <tr>
+              <td id="goodYname"></td>
+              <td id="totalYbefore"></td>
+              <td id="totalYafter"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+
+      <div class="row">
         <div class="userInput col-sm-12">
           <form>
             <div class="form-group">
               <label for="inputPerson1">One of the two potential trading parteners:</label>
-              <input type="text" class="form-control" id="inputGood1" placeholder="Enter the name of a good">
+              <input type="text" class="form-control" id="inputPerson1" placeholder="Enter the name of a person">
             </div>
             <div class="form-group">
-              <label for="inputPerson21">The otherof the two trading parteners:</label>
-              <input type="text" class="form-control" id="inputGood1" placeholder="Enter the name of a good">
+              <label for="inputPerson2">The otherof the two trading parteners:</label>
+              <input type="text" class="form-control" id="inputPerson2" placeholder="Enter the name of a person">
             </div>
             <div class="form-group">
               <label for="inputGood1">One of the two goods:</label>
@@ -33,22 +83,30 @@
               <input type="number" class="form-control" id="inputGood1Person1">
             </div>
               <div class="form-group">
-            <label for="inputGood1Person1">On a scale of 1 to 10, how many units of Good2 can Person1 produce in a week:</label>
+            <label for="inputGood2Person1">On a scale of 1 to 10, how many units of Good2 can Person1 produce in a week:</label>
               <input type="number" class="form-control" id="inputGood2Person1">
             </div>
             <div class="form-group">
-              <label for="inputGood1Person1">On a scale of 1 to 10, how many units of Good1 can Person2 produce in a week:</label>
+              <label for="inputGood1Person2">On a scale of 1 to 10, how many units of Good1 can Person2 produce in a week:</label>
               <input type="number" class="form-control" id="inputGood1Person2">
             </div>
             <div class="form-group">
-              <label for="inputGood1Person1">On a scale of 1 to 10, how many units of Good2 can Person2 produce in a week:</label>
+              <label for="inputGood2Person2">On a scale of 1 to 10, how many units of Good2 can Person2 produce in a week:</label>
               <input type="number" class="form-control" id="inputGood2Person2">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button id="submit" class="btn btn-default">Submit</button>
           </form>
         </div>
       </div>
     </div>
+    
+
+
+<!-- morris.js and it's dependencies::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script> -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
