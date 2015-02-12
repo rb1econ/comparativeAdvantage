@@ -5,61 +5,105 @@
     <title>Ricardo</title>
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+    
+    <!-- Chartist -->
+    <!-- <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script> -->
+    <!-- :::::::: -->
+
+    
   </head>
   <body>
     <div class="container">
       <header><h1>Will Trade Help?</h1></header>
       <div class="row">
         <h2 class="col-sm-12">Summary Table</h2>
-        <button id="sampleBtn" class="btn btn-default">Sample Data</button>
-        <button id="clearData" class="btn btn-default">Clear Data</button>
-        <div class="sampleCase">
+        
+        <p class="introSentence"></p>
           <table class="table table-bordered sampleTable col-sm-12">
             <tr class="tableGoodsOpCost">
               <td></td>
-              <td id="goodX"></td>
+              <td><span id="goodX" class="editable"></span>(click) production per week if all time devoted to it</td>
               <td id="goodXopCost"><strong>Opportunity Cost</strong> (what must be given up to produce one unit of the first good)</td>
-              <td id="goodY"></td>
+              <td><span id="goodY" class="editable"></span>(click) production per week if all time devoted to it</td>
               <td id="goodYopCost"><strong>Opportunity Cost</strong> (what must be given up to produce one unit of the second good)</td>
             </tr>
-            <tr class="tablePerson1">
-              <td id="person1"></td>
-              <td id="goodXperson1"></td>
-              <td id="goodXperson1opCost"></td>
-              <td id="goodYperson1"></td>
-              <td id="goodYperson1opCost"></td>
+            <tr class="tablewayne">
+              <td><span id="wayne" class="editable"></span><br>(click)</td>
+              <td><span id="goodXwayne" class="editable"></span><br>(click)</td>
+              <td id="goodXwayneopCost"></td>
+              <td><span  id="goodYwayne" class="editable"></span><br>(click)</td>
+              <td id="goodYwayneopCost"></td>
             </tr>
-            <tr class="tablePerson2">
-              <td id="person2"></td>
-              <td id="goodXperson2"></td>
-              <td id="goodXperson2opCost"></td>
-              <td id="goodYperson2"></td>
-              <td id="goodYperson2opCost"></td>
+            <tr class="tablegarth">
+              <td><span id="garth" class="editable"></span><br>(click)</td>
+              <td><span id="goodXgarth" class="editable"></span><br>(click)</td>
+              <td id="goodXgarthopCost"></td>
+              <td><span id="goodYgarth" class="editable"></span><br>(click)</td>
+              <td id="goodYgarthopCost"></td>
             </tr>
           </table>
           <table class="table table-bordered sampleTableTotals col-sm-12">
             <tr>
               <td></td>
               <td>Total before trade (autarky)</td>
-              <td>Total after trade and specialization (if equivalent production ratios complete specialization may not be best solution)</td>
+              <td>Total after trade and some specialization</td>
+              <td>Total if completely specialized</td>
             </tr>
             <tr>
-              <td id="goodXname"></td>
+              <td class="goodX"></td>
               <td id="totalXbefore"></td>
               <td id="totalXafter"></td>
+              <td id="totalXspecial"></td>
             </tr>
             <tr>
-              <td id="goodYname"></td>
+              <td class="goodY"></td>
               <td id="totalYbefore"></td>
               <td id="totalYafter"></td>
+              <td id="totalYspecial"></td>
             </tr>
           </table>
+          <table class="table table-bordered tradeTableTotals col-sm-12" >
+            <tr>
+              <td></td>
+              <td><span class="wayne"></span>'s pre-trade amounts</td>
+              <td><span class="garth"></span>'s pre-trade amounts</td>
+              <td><span class="wayne"></span>'s offer for trade</td>
+              <td><span class="garth"></span>'s counter offer</td>
+            </tr>
+            <tr>
+              <td><span class="goodX"></span></td>
+              <td class="wayneXbefore"></td>
+              <td class="garthXbefore"></td>
+              <td><span id="offer" class="editable"></span></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><span class="goodY"></span></td>
+              <td class="wayneYbefore"></td>
+              <td class="garthYbefore"></td>
+              <td><span id="request" class="editable"></span></td>
+              <td class=""></td>
+            </tr>
+          </table>
+          <button class="btn btn-default">Click to reveal your best offer and request</button>
+        </div>
+        <div class='row'>
+          <div id="chartEvery" style="min-width: 310px; height: 400px; margin: 0 auto">
+            
+          </div>
+          <!-- <div id="chartWayne" style="height: 250px" class="ct-chart col-sm-6">
+          <p></p>
+          </div>
+          <div id="chartGarth" style="height: 250px" class="ct-chart col-sm-6">
+          <p></p>
+          </div> -->
         </div>
       </div>
 
 
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="userInput col-sm-12">
           <form>
             <div class="form-group">
@@ -99,17 +143,16 @@
         </div>
       </div>
     </div>
+     -->
+
     
-
-
-<!-- morris.js and it's dependencies::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script> -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+    <!-- High Charts -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <!-- ::::::::::: -->
     <script src="main.js"></script>
 
   </body>
