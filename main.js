@@ -84,7 +84,7 @@ $(document).on('ready', function() {
                var printOut = garth+' can produce '+goodX + ' at the lowest cost and '+wayne+' can produce '+ goodY+ ' at the lowest cost';
                compAdvWayneY=true;
                compAdvGarthX=true;
-               compAdvGarthY=true;
+               compAdvGarthY=false;
                compAdvWayneX=false;
                return printOut;
             }
@@ -312,65 +312,101 @@ $(document).on('ready', function() {
              }]
          });
      });
+
    };
    // This bracket closes everything();
-   
+
+
+
 // Edit in place javascript::::::
-      var saveBtn = '';
-      var closeBtn = '';
-      var inputInfo = '';
-      $('.editable').on('click', function(){
-          $(this).hide();
-          inputInfo = $('<textarea rows="1" cols="7" class="info">');
-          $(this).after(inputInfo);
-          closeBtn = $('<button class="close btn btn-default">X</button>');
-          $(inputInfo).after(closeBtn);
-          saveBtn = $('<button class="save btn btn-default">✓</button>');
-          $(inputInfo).after(saveBtn);
-          $('textarea').focus();
+      var saveBtn ;
+      var closeBtn ;
+      var inputInfo ;
+      var popoverHtml ;
+      var popoverContent ;
+      var popoverTitle ;
+
+      $('.editable').hover(function(){
+          // $(this).hide();
+          
+          // console.log($(this).popover);
+          // 
+          popoverContent = $('<div id="popoverContent"><input type="text"></div>');
+          popoverTitle = $('<div id="popoverTitle">Enter a Value <button id="saveIt" class="btn btn-default">✓</button><button id="closeIt" class="btn btn-default">X</button></div>');
+
+          $(this).popover({
+                html: true,
+                // container: this,
+                trigger: 'click',
+                content: function() {
+                  // console.log(popoverContent);
+                  return popoverContent.html();
+                },
+                title: function() {
+                  return popoverTitle.html();
+                }
+          });
+          // $(this).after(popoverHtml);
+          // 
+          // 
+          // closeBtn = $('<button id="closeIt" class="btn btn-default">X</button>');
+          // $(inputInfo).after(closeBtn);
+          // saveBtn = $('<button id="saveIt" class="btn btn-default">✓</button>');
+          // $(inputInfo).after(saveBtn);
+          
+
+         $('.editable').on('click', function(){
+            $(this).closest('td').find('input').focus();
+         });
+         
+
       });
 
-      $('body').on('click', '.close', function(){
-          
-          $(this).parent().children('.info').remove();
-          $(this).parent().children('.editable').show();
-          $(this).parent().children('.save').remove();
-          $(this).parent().children('.close').remove();
+      $('body').on('click', '#closeIt', function(){
+
+         $(this).parent().parent().popover('destroy');
+         
       });
 
 
-      $('body').on('click', '.save', function(){
+      $('body').on('click', '#saveIt', function(){
           
-         var userInput = $(this).siblings('textarea').val();
+         // var userInput = $(this).siblings('textarea').val();
           // console.log(userInput);
           
 
           // set variables to their corresponding table elements:::::THERE ARE 8 IN TOTAL:::::::
-         wayne = $('#wayne').siblings('textarea').val() || $('#wayne').text();
-         garth = $('#garth').siblings('textarea').val() || $('#garth').text();
+         wayne = $('#wayne').parent().find('input').val() || $('#wayne').text();
+         garth = $('#garth').parent().find('input').val() || $('#garth').text();
 
-         goodX =$('#goodX').siblings('textarea').val() || $('#goodX').text();
-         goodY = $('#goodY').siblings('textarea').val() || $('#goodY').text();
+         goodX =$('#goodX').parent().find('input').val() || $('#goodX').text();
+         goodY = $('#goodY').parent().find('input').val() || $('#goodY').text();
 
-         wayneX=$('#goodXwayne').siblings('textarea').val() || $('#goodXwayne').text();
-         wayneY=$('#goodYwayne').siblings('textarea').val() || $('#goodYwayne').text();
+         wayneX=$('#goodXwayne').parent().find('input').val() || $('#goodXwayne').text();
+         wayneY=$('#goodYwayne').parent().find('input').val() || $('#goodYwayne').text();
 
-         garthX=$('#goodXgarth').siblings('textarea').val() || $('#goodXgarth').text();
-         garthY=$('#goodYgarth').siblings('textarea').val() || $('#goodYgarth').text();
+         garthX=$('#goodXgarth').parent().find('input').val() || $('#goodXgarth').text();
+         garthY=$('#goodYgarth').parent().find('input').val() || $('#goodYgarth').text();
 
-         tradeOffer=$('#offer').siblings('textarea').val() || $('#tradeOffer').text();
-         tradeRequest=$('#request').siblings('textarea').val() || $('#tradeRequest').text();
+         tradeOffer=$('#offer').parent().find('input').val() || $('#tradeOffer').text();
+         tradeRequest=$('#request').parent().find('input').val() || $('#tradeRequest').text();
          everything();
 
-         // $(this).parent().find('p').html(userInput);
-
-         $(this).parent().children('.info').remove();
-         $(this).parent().children('.editable').show();
-         $(this).parent().children('.close').remove();
-         $(this).parent().children('.save').remove();
+         $(this).parent().parent().popover('destroy');
+         // $(this).parent().children('.info').remove();
+         // $(this).parent().children('.editable').show();
+         // $(this).parent().children('#closeIt').remove();
+         // $(this).parent().children('#saveIt').remove();
 
       });
 
 
+
    everything();
+
+
+
+      
+
+
 });

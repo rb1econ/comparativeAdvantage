@@ -1,0 +1,42 @@
+#saveIt{
+   display: inline;
+   height: 23px;   
+   line-height: 0.9;
+   font-size: 12px;
+}
+
+#closeIt{
+   display: inline;
+   height: 23px;   
+   line-height: 0.9;
+   font-size: 12px;
+}
+
+.editable {
+   cursor: pointer;
+}
+
+/*.container {
+   padding-left: 40px;
+   padding-right: 40px;
+   padding-bottom: 40px;
+   background: #77E3EA;
+}
+
+table{
+   color: #25B494;
+   background: #4a494e;
+}
+
+.editable {
+   color: #817655;
+   font-weight: bold;
+}
+
+.editableTD {
+   background: #EB8C83;
+}
+
+header {
+   background: #E79A3C;
+}*/

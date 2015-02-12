@@ -17,29 +17,29 @@
     <div class="container">
       <header><h1>Will Trade Help?</h1></header>
       <div class="row">
-        <h2 class="col-sm-12">Summary Table</h2>
+        <h3 class="col-sm-12">Editable Table:</h3>
         
         <p class="introSentence"></p>
           <table class="table table-bordered sampleTable col-sm-12">
             <tr class="tableGoodsOpCost">
               <td></td>
-              <td><span id="goodX" class="editable"></span>(click) production per week if all time devoted to it</td>
+              <td class="editableTD"><span id="goodX" class="editable"></span> production per week if all time devoted to it</td>
               <td id="goodXopCost"><strong>Opportunity Cost</strong> (what must be given up to produce one unit of the first good)</td>
-              <td><span id="goodY" class="editable"></span>(click) production per week if all time devoted to it</td>
+              <td class="editableTD"><span id="goodY" class="editable"></span> production per week if all time devoted to it</td>
               <td id="goodYopCost"><strong>Opportunity Cost</strong> (what must be given up to produce one unit of the second good)</td>
             </tr>
             <tr class="tablewayne">
-              <td><span id="wayne" class="editable"></span><br>(click)</td>
-              <td><span id="goodXwayne" class="editable"></span><br>(click)</td>
+              <td class="editableTD"><span id="wayne" class="editable"></span></td></td>
+              <td class="editableTD"><span id="goodXwayne" class="editable"></span></td>
               <td id="goodXwayneopCost"></td>
-              <td><span  id="goodYwayne" class="editable"></span><br>(click)</td>
+              <td class="editableTD"><span  id="goodYwayne" class="editable"></span></td>
               <td id="goodYwayneopCost"></td>
             </tr>
             <tr class="tablegarth">
-              <td><span id="garth" class="editable"></span><br>(click)</td>
-              <td><span id="goodXgarth" class="editable"></span><br>(click)</td>
+              <td class="editableTD"><span id="garth" class="editable"></span><br></td>
+              <td class="editableTD"><span id="goodXgarth" class="editable"></span></td>
               <td id="goodXgarthopCost"></td>
-              <td><span id="goodYgarth" class="editable"></span><br>(click)</td>
+              <td class="editableTD"><span id="goodYgarth" class="editable"></span></td>
               <td id="goodYgarthopCost"></td>
             </tr>
           </table>
@@ -63,7 +63,7 @@
               <td id="totalYspecial"></td>
             </tr>
           </table>
-          <table class="table table-bordered tradeTableTotals col-sm-12" >
+          <!-- <table class="table table-bordered tradeTableTotals col-sm-12" >
             <tr>
               <td></td>
               <td><span class="wayne"></span>'s pre-trade amounts</td>
@@ -83,67 +83,18 @@
               <td class="wayneYbefore"></td>
               <td class="garthYbefore"></td>
               <td><span id="request" class="editable"></span></td>
-              <td class=""></td>
+              <td></td>
             </tr>
-          </table>
-          <button class="btn btn-default">Click to reveal your best offer and request</button>
+          </table> -->
+       
         </div>
         <div class='row'>
           <div id="chartEvery" style="min-width: 310px; height: 400px; margin: 0 auto">
-            
           </div>
-          <!-- <div id="chartWayne" style="height: 250px" class="ct-chart col-sm-6">
-          <p></p>
-          </div>
-          <div id="chartGarth" style="height: 250px" class="ct-chart col-sm-6">
-          <p></p>
-          </div> -->
         </div>
       </div>
 
 
-
-      <!-- <div class="row">
-        <div class="userInput col-sm-12">
-          <form>
-            <div class="form-group">
-              <label for="inputPerson1">One of the two potential trading parteners:</label>
-              <input type="text" class="form-control" id="inputPerson1" placeholder="Enter the name of a person">
-            </div>
-            <div class="form-group">
-              <label for="inputPerson2">The otherof the two trading parteners:</label>
-              <input type="text" class="form-control" id="inputPerson2" placeholder="Enter the name of a person">
-            </div>
-            <div class="form-group">
-              <label for="inputGood1">One of the two goods:</label>
-              <input type="text" class="form-control" id="inputGood1" placeholder="Enter the name of a good">
-            </div>
-            <div class="form-group">
-              <label for="inputGood2">The other of the two goods:</label>
-              <input type="text" class="form-control" id="inputGood2" placeholder="Enter the name of a good">
-            </div>
-            <div class="form-group">
-              <label for="inputGood1Person1">On a scale of 1 to 10, how many units of Good1 can Person1 produce in a week:</label>
-              <input type="number" class="form-control" id="inputGood1Person1">
-            </div>
-              <div class="form-group">
-            <label for="inputGood2Person1">On a scale of 1 to 10, how many units of Good2 can Person1 produce in a week:</label>
-              <input type="number" class="form-control" id="inputGood2Person1">
-            </div>
-            <div class="form-group">
-              <label for="inputGood1Person2">On a scale of 1 to 10, how many units of Good1 can Person2 produce in a week:</label>
-              <input type="number" class="form-control" id="inputGood1Person2">
-            </div>
-            <div class="form-group">
-              <label for="inputGood2Person2">On a scale of 1 to 10, how many units of Good2 can Person2 produce in a week:</label>
-              <input type="number" class="form-control" id="inputGood2Person2">
-            </div>
-            <button id="submit" class="btn btn-default">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-     -->
 
     
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
