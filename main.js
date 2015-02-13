@@ -7,11 +7,11 @@ $(document).on('ready', function() {
    var wayne = 'Wayne';
    var garth = 'Garth';
 
-   var wayneX = 3;
-   var wayneY = 2;
+   var wayneX = 10;
+   var wayneY = 5;
 
-   var garthX = 9;
-   var garthY = 5;
+   var garthX = 8;
+   var garthY = 2;
 
    var compAdvWayneX=false;
    var compAdvWayneY=false;
