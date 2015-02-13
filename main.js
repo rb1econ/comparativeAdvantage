@@ -215,7 +215,7 @@ $(document).on('ready', function() {
       console.log(termsOfTrade());
 
       // append variables/sample case:::::::::::
-      var introInfo = '<p>We live in a fictitious world with only two goods. They are ' +goodX+' and '+goodY+'. There are only two people; you, '+wayne+', and a potential trading partner, '+garth+'.';
+      var introInfo = '<p>We live in a fictitious world with only two goods. They are ' +goodX+' and '+goodY+'. You can change which two goods are in this world by clicking on them in the table below. There are only two people; you, '+wayne+', and a potential trading partner, '+garth+'. (You can change these too)';
 
       $('.introSentence').html(introInfo);
 

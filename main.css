@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('chancur.ttf');
+}
+
 #saveIt{
    display: inline;
    height: 23px;   
@@ -16,27 +21,58 @@
    cursor: pointer;
 }
 
-/*.container {
+body {
+   color: #4B4E75;
+   /*background-image: url('concrete_seamless.png');*/
+   font-size: 18px;
+   background: #ecf0f1;
+}
+h3 {
+   /*font-family: MyWebFont;*/
+   color: #A94634;
+   font-size: 22px;
+}
+
+h2 {
+   /*font-family: MyWebFont;*/
+   color: #A94634;
+   font-size: 26px;
+}
+h1{
+   /*font-family: MyWebFont;*/
+   font-size: 56px;
+   padding: 10px;
+   margin: 0;
+   color: #A94634;
+}
+.container {
    padding-left: 40px;
    padding-right: 40px;
    padding-bottom: 40px;
-   background: #77E3EA;
-}
-
-table{
-   color: #25B494;
-   background: #4a494e;
-}
-
-.editable {
-   color: #817655;
-   font-weight: bold;
+   background: #ecf0f1;
 }
 
 .editableTD {
-   background: #EB8C83;
+   /*border-radius: 1em 1em 1em 1em;*/
+}
+
+.table-hover {
+   border-color: #4B4E75;
+}
+
+.editable {
+   color: #A94634;
+   font-weight: bold;
+   border-radius: 1em;
 }
 
 header {
-   background: #E79A3C;
-}*/
+   /*color:#3498db;*/
+   text-align: center;
+   /*background: #16a085;*/
+   padding: 30px;
+   border-bottom: 3px solid #4B4E75;
+   border-top: 0;
+   /*border-radius: 0 0 2rem 2rem; */
+   /*background: #bdc3c7;*/
+}
